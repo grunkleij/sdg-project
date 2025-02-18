@@ -1,0 +1,248 @@
+/* Positioning the image container */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+  width: 100%; /* Adjust as needed */
+  height: 400px; /* Default height, can be adjusted with media queries */
+  overflow: hidden; /* Ensures anything outside the container is cropped */
+  border-bottom: 5px solid #1ec468;
+}
+
+/* Styling the gradient overlay */
+.overlay-hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.86),
+    rgba(0, 0, 0, 0.19)
+  ); /* Transparent to black gradient from bottom to top */
+  z-index: 1;
+}
+
+/* Styling for the hero image */
+.heroimagestyle {
+  width: 100%;
+  height: 100%; /* Make sure the image fills the container */
+  object-fit: cover; /* Crop and fill the container while maintaining aspect ratio */
+  z-index: 0; /* Ensure image is below overlay */
+}
+
+/* Optional: Styling for the nav image (no overlay) */
+.navstyle {
+  width: 100%;
+  height: auto;
+}
+
+/* Styling for the text at the bottom center of the image */
+.innertext {
+  text-align: center;
+  width: 90%;
+  position: absolute;
+  z-index: 2;
+  color: white; /* Make sure the text is visible */
+  bottom: 20%; /* Adjust this value to move text up or down */
+  left: 50%; /* Align text horizontally to the center */
+  transform: translateX(-50%); /* Ensure text is centered horizontally */
+  font-size: 36px; /* Adjust size as needed */
+  font-weight: bold; /* Makes the text bold */
+}
+
+.about-text {
+  width: 1000px;
+  margin: 10px;
+}
+
+.about {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* about */
+
+.aboutheading {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  color: #303d48;
+  text-transform: uppercase;
+  font-size: 25px;
+  font-style: normal;
+}
+
+.yello-line {
+  border: 2px solid #ffa500;
+  width: 100px;
+}
+
+.paragraph-font {
+  font-size: 14px;
+}
+
+/* vide container */
+
+/* icons */
+.icon-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  max-width: 100%;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+}
+.icon {
+  font-size: 15px;
+  flex: 1 1 calc(25% - 15px);
+  max-width: 200px;
+  height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  transition: filter 0.3s ease-in-out;
+}
+.icon img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+  border-radius: 10px;
+  transition: filter 0.3s ease-in-out;
+  transition: opacity 0.3s ease; /* Smooth transition for the image */
+}
+
+
+.icon .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.86),
+    rgba(0, 0, 0, 0.19)
+  );
+  /* font-size:15px; */
+
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Smooth transition for the overlay */
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+}
+
+.icon:hover .overlay {
+  opacity: 1;
+  filter:blur(0)
+}
+
+/* .icon:hover img {
+  filter: blur(5px);
+} */
+
+
+.overlay h2{
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  ;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .icon {
+    flex: 1 1 calc(33.33% - 15px);
+  }
+}
+
+@media (max-width: 480px) {
+  .icon {
+    flex: 1 1 calc(50% - 15px);
+  }
+}
+
+.video-container {
+  width: 500px;
+  height: 200px;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .image-container {
+    height: 400px; /* Adjust the height for smaller screens */
+  }
+
+  .innertext {
+    font-size: 28px; /* Adjust text size for smaller screens */
+    width: 80%; /* Allow more width for text on smaller screens */
+  }
+  .about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .image-container {
+    height: 300px; /* Further reduce the height for very small screens */
+  }
+
+  .innertext {
+    font-size: 24px; /* Make text smaller */
+    width: 90%; /* Adjust width to make it more flexible */
+    bottom: 15%; /* Move the text further up on very small screens */
+  }
+  .aboutheading {
+    font-size: 10px;
+  }
+  .about-text {
+    width: auto;
+  }
+
+  .about {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .video-container{
+    width: auto;
+    /* left:20; */
+  }
+}
