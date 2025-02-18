@@ -134,6 +134,7 @@ body {
   object-fit: contain;
   border-radius: 10px;
   transition: filter 0.3s ease-in-out;
+  /* z-index: -1; */
   transition: opacity 0.3s ease; /* Smooth transition for the image */
 }
 
@@ -161,16 +162,14 @@ body {
   border-radius: 10px;
   text-align: center;
   padding: 10px;
+  /* z-index: -1; */
 }
 
 .icon:hover .overlay {
   opacity: 1;
-  filter:blur(0)
+  /* filter:blur(0) */
 }
 
-/* .icon:hover img {
-  filter: blur(5px);
-} */
 
 
 .overlay h2{
@@ -227,7 +226,7 @@ body {
     bottom: 15%; /* Move the text further up on very small screens */
   }
   .aboutheading {
-    font-size: 10px;
+    font-size: 25px;
   }
   .about-text {
     width: auto;
